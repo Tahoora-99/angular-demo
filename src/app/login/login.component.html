@@ -1,0 +1,48 @@
+<!-- <p>Login</p>
+<form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form> -->
+  
+  
+  <div class="card-header m-5">
+  
+    <h3 class="card-header">Login</h3>
+    <form [formGroup]="userInformation" (ngSubmit)="onSubmit()"  class="form-group">
+      <div class="form-group">
+        <div>
+        <label>userName:
+          <input type="text" formControlName="userName"  class="form-control" placeholder="username">
+        </label>
+        <div *ngIf="userInformation.controls['userName'].hasError?.('required')"
+        class="alert alert-primary">
+        Username is required
+        </div>
+        </div>
+      
+      <div>
+          <label for="password">Password:
+          <input type="text" formControlName="password" class="form-control" placeholder="password" id="password">
+          </label>  
+          <div *ngIf="userInformation.controls['password'].hasError?.('required')"
+          class="alert alert-primary" >
+          password  is required.
+      </div>       
+      </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary m-3"> Login </button>
+          <button type="submit" class="btn btn-primary">Registry</button>
+      </div>
+      </div>
+    </form>  
+    <!-- [disabled]="userInformation.invalid" -->
+    </div>
+    

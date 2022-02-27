@@ -1,7 +1,7 @@
-import { group } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   // submitted : boolean = true;
 
   constructor(
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -20,16 +21,15 @@ export class LoginComponent implements OnInit {
       userName:new FormControl('',Validators.required),
       password:new FormControl('',Validators.required)
       //this.form.controls["firstName"].setValidators([Validators.minLength(1), Validators.maxLength(30)]);
+      
     })
+
+    // this.route.queryParams.subscribe(params => {
+    //   this.userInformation.controls['userName'] = params['userName'];
+    // });
     
   }
-  // login(){
-
-  // }
-
- 
-
-  onSubmit(){
+    onSubmit(){
     // console.log(this.userInformation);
 
     //checks if the value of userInformation are valid or not
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
     console.log(JSON.stringify(this.userInformation.value));
     const value = JSON.stringify(this.userInformation.value)
     localStorage.setItem("info:", value);
-    alert(localStorage.getItem("info:"));
+    // alert(localStorage.getItem("info:"));
 
 
     }

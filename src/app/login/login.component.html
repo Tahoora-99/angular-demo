@@ -14,7 +14,17 @@
   
   
   <div class="card-header m-5">
-  
+
+    <nav>
+      <ul>
+        <!-- <li><a routerLink="/app-login" routerLinkActive="active">login </a></li> -->
+        <li><a routerLink="/app-home" routerLinkActive="active">Home </a></li>
+        
+      </ul>
+    </nav>
+
+    <!-- <router-outlet></router-outlet> -->
+
     <h3 class="card-header">Login</h3>
     <form [formGroup]="userInformation" (ngSubmit)="onSubmit()"  class="form-group">
       <div class="form-group">
@@ -38,7 +48,7 @@
       </div>       
       </div>
       <div class="form-group">
-          <button type="submit" class="btn btn-primary m-3"> Login </button>
+          <button type="submit" class="btn btn-primary m-3" routerLink="/app-home"> Login </button>
           <button type="submit" class="btn btn-primary">Registry</button>
       </div>
       </div>

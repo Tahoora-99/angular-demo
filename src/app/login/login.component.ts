@@ -47,12 +47,11 @@ export class LoginComponent implements OnInit {
     // console.log(JSON.stringify(this.userInformation.controls['password']?.value));
 
     //access both username nad password value directly:
-    console.log(JSON.stringify(this.userInformation.value));
-    const value = JSON.stringify(this.userInformation.value)
-    localStorage.setItem("info:", value);
-    // alert(localStorage.getItem("info:"));
-
-    
+    // console.log(JSON.stringify(this.userInformation.value));
+    // const value = JSON.stringify(this.userInformation.value)
+    localStorage.setItem("info:",JSON.stringify( this.userInformation?.value));
+    const value = this.userInformation.get('userName')?.value
+    this.router.navigate(['/app-contact',value]);
     
     }
   

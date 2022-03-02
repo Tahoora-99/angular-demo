@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router ,UrlSerializer} from '@angular/router';
+import { ActivatedRoute, Params, Router, UrlSerializer, ParamMap } from '@angular/router';
+
 
 
 
@@ -10,6 +11,9 @@ import { ActivatedRoute, Params, Router ,UrlSerializer} from '@angular/router';
 })
 export class ContactComponent implements OnInit {
 
+  userName:any;
+  password:any;
+  
   constructor(
     private route: ActivatedRoute,
     private router:Router,
@@ -19,18 +23,18 @@ export class ContactComponent implements OnInit {
     console.log(router.url);
   }
   ngOnInit(): void {
-    this.router.navigate(
-      ['/app-contact'], 
-      { queryParams: { name: 'tahmine' , id:'3'} },
-      );
-  
-  }
+    // this.route.paramMap.subscribe(params => 
+    // console.log(`username:${params.get('userName')}`)
 
-  userInfo(){
-  this.route.queryParams.subscribe(params => {
-    console.log(params);
-    // this.user.name=params.;
-  });
-}
+    const value = this.route.snapshot.paramMap.get('userName');
+    // localStorage.getItem(("info:"));
+    console.log(value);
+    
+     
+ 
+    }
+
+  
+    
 
 }

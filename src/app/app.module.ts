@@ -9,12 +9,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { ContactComponent } from './contact/contact.component';
+
 
 
 const routes:Routes=[
   {path:'app-login' , component:LoginComponent},
   {path:'app-home', component:HomeComponent},
-  // { path: '**', component: PageNotFoundComponent }
+  {path:'app-contact', component:ContactComponent}
+  // { path: '**', component: app-home }
 
 
 ]
@@ -22,7 +25,8 @@ const routes:Routes=[
 @NgModule({
  
   imports: [
-    RouterModule.forRoot(routes),
+ 
+  RouterModule.forRoot(routes),
    
     BrowserModule,
     CommonModule,
@@ -36,6 +40,7 @@ const routes:Routes=[
     AppComponent,
     HomeComponent,
     LoginComponent,
+    ContactComponent
 
   ],
   providers: [],

@@ -1,5 +1,5 @@
 import { Component , OnInit } from '@angular/core';
-
+import { User } from './services/user';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,13 @@ import { Component , OnInit } from '@angular/core';
 })
 export class AppComponent{
   title = 'angular-app';
+  user:User;
+  userService;
+  constructor(){
+    
+  }
+
+  getUser(){
+    this.user = this.userService.getUser;
+      }
 }

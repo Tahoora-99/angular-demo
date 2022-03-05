@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-
+import { User } from '../services/user';
+import { AuthenticationService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +11,19 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  userInformation : FormGroup;
-  
+  userInformation : FormGroup;  
 
   constructor(
     private route: ActivatedRoute,
-    private router:Router
-  ) { }
+    private router:Router,
+    private authenticationService: AuthenticationService
+  ) { 
+    //navigate to registry if doesnt 
+     if (!this.authenticationService.getUser()){
+       this.router.navigate['/registry'];
+     }
+
+   }
 
   ngOnInit(): void {
     this.userInformation = new FormGroup({
@@ -54,10 +61,5 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/app-contact',value]);
     
     }
-  
-
-  // ngAfterViewInit(){
-
-  // }
 
 }

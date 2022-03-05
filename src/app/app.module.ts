@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
+import { RegistryComponent } from './registry/registry.component';
 
 
 
 const routes:Routes=[
   {path:'app-login' , component:LoginComponent},
   {path:'app-home', component:HomeComponent},
-  {path:'app-contact/', component:ContactComponent}
+  {path:'app-contact/', component:ContactComponent},
+  {path:'app-registry', component:RegistryComponent}
   // { path: '**', component: app-home }
 
 
@@ -40,7 +42,8 @@ const routes:Routes=[
     AppComponent,
     HomeComponent,
     LoginComponent,
-    ContactComponent
+    ContactComponent,
+    RegistryComponent
 
   ],
   providers: [],

@@ -6,6 +6,10 @@
 <div class="container m-3">
     <div>
         <p>username:{{userName}}</p>
+        <!-- <div> -->
+        <div *ngFor="let arrayDatas of arrayData">
+            {{arrayDatas.login}}
+        </div>
         <!-- <button class="btn btn-primary" (click)="userInfo()">product</button> -->
     </div>
 

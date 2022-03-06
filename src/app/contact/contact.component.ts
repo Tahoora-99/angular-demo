@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router, UrlSerializer, ParamMap } from '@angular/router';
-
+import { Component, OnInit,Injectable } from '@angular/core';
+import { ActivatedRoute, Params, Router, ParamMap } from '@angular/router';
 
 
 
@@ -18,23 +17,28 @@ export class ContactComponent implements OnInit {
     private route: ActivatedRoute,
     private router:Router,
     
+    
   )
   { 
     console.log(router.url);
   }
+
   ngOnInit(): void {
     // this.route.paramMap.subscribe(params => 
     // console.log(`username:${params.get('userName')}`)
-
+    // if (!localStorage.getItem("info:")){
+    //   // if (localStorage.length == 0){
+    //   console.log("you are not allowed to accesse this page!");
+     
+    
     const value = this.route.snapshot.paramMap.get('userName');
     // localStorage.getItem(("info:"));
     console.log(value);
     
-     
- 
-    }
-
-  
-    
+  }
 
 }
+    
+
+  
+

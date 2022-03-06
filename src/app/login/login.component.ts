@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { User } from '../services/user';
-import { AuthenticationService } from '../services/user.service';
+
+// import { AuthenticationService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -16,12 +16,12 @@ export class LoginComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router:Router,
-    private authenticationService: AuthenticationService
+    // private authenticationService: AuthenticationService
   ) { 
     //navigate to registry if doesnt 
-     if (!this.authenticationService.getUser()){
-       this.router.navigate['/registry'];
-     }
+    //  if (!this.authenticationService.getUser()){
+    //    this.router.navigate['/registry'];
+    //  }
 
    }
 

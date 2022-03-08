@@ -13,7 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import { RegistryComponent } from './registry/registry.component';
-import { AuthGuard } from './guards/auth.guard';
+import { AuthGuard } from './shared/guards/auth.guard';
+import { ProfileComponent } from './profile/profile.component';
 // import { CanActivateRouteGuard } from './can-activate-route.guard';
 
 
@@ -23,7 +24,7 @@ const routes:Routes=[
   {path:'app-login' , component:LoginComponent},
   {path:'app-home', component:HomeComponent},
   {path:'app-contact/:userName', component:ContactComponent, canActivate:[AuthGuard]},
-  
+  {path:'app-profile/:login', component:ProfileComponent},
  
   // {path:'app-registry', component:RegistryComponent},
   // {path:'',component:, canActivate:[AuthGuardService]}
@@ -53,7 +54,8 @@ const routes:Routes=[
     HomeComponent,
     LoginComponent,
     ContactComponent,
-    RegistryComponent
+    RegistryComponent,
+    ProfileComponent
 
   ],
   providers: [

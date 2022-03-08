@@ -1,6 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { ActivatedRoute, Params, Router, ParamMap } from '@angular/router';
-import { User } from '../_services/user';
+import { User } from '../shared/_services/user';
 
 
 
@@ -17,7 +17,7 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    // private router:Router,
+    private router: Router,
     private user: User
 
 
@@ -36,7 +36,7 @@ export class ContactComponent implements OnInit {
     // localStorage.getItem(("info:"));
     console.log(value);
 
-      this.user.getAllUser().subscribe((user) =>{
+    this.user.getAllUser().subscribe((user) => {
       this.arrayData = user
       console.log(this.arrayData)
     }
@@ -44,7 +44,10 @@ export class ContactComponent implements OnInit {
 
 
   }
+  userInfo(arrayDatas) {
+    this.router.navigate(['/app-profile',arrayDatas])
 
+  }
 
 
 }

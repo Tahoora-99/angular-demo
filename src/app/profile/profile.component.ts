@@ -27,11 +27,11 @@ export class ProfileComponent implements OnInit {
     }
     )
 
-    let reader = new FileReader();
-    const avatar = this.route.snapshot.paramMap.get('')
-    // this.user.getImage(avatar).subscribe((user:any) =>{
-    //   this.imageToShow = reader.result;
-    // })
+    // let reader = new FileReader();
+    // const avatar = this.route.snapshot.paramMap.get('')
+    // // this.user.getImage(avatar).subscribe((user:any) =>{
+    // //   this.imageToShow = reader.result;
+    // // })
     
   };
 
